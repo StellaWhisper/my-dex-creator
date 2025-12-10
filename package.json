@@ -1,0 +1,23 @@
+{
+  "name": "@liberfi/dex-nextjs-template",
+  "version": "0.0.1",
+  "description": "Liberfi DEX NextJs Template",
+  "author": "AI <ai@liberfi.io>",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=./apps/web",
+    "lint": "turbo run lint --parallel",
+    "lint-fix": "turbo run lint-fix --parallel",
+    "lint-staged": "lint-staged"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "lint-staged": "^15.5.2",
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "pnpm@9.5.0"
+}
