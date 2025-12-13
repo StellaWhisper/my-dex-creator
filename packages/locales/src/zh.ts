@@ -46,7 +46,7 @@ export default {
       "launch_token": "創建代幣"
     },
     "settings": {
-      "account_name": "Liberfi 帳戶",
+      "account_name": "{{brand}} 帳戶",
       "deposit": "充值",
       "preferences": "偏好設定",
       "social_medias": "社交媒體",

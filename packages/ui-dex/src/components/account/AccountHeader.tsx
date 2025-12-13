@@ -1,6 +1,7 @@
 import { SettingsIcon } from "@/assets";
-import { useAppSdk, useAuthenticatedCallback, useTranslation } from "@liberfi/ui-base";
 import { Button, Image } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
+import { useAppSdk, useAuthenticatedCallback, useTranslation } from "@liberfi/ui-base";
 
 export function AccountHeader() {
   const { t } = useTranslation();
@@ -22,7 +23,7 @@ export function AccountHeader() {
           className="rounded-full overflow-hidden"
           removeWrapper
         />
-        {t("extend.account.universal_account")}
+          {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
       </div>
       <Button
         isIconOnly

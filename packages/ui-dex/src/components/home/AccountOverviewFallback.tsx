@@ -1,7 +1,8 @@
 import { ArrowRightIcon, BullishIcon } from "@/assets/icons";
 import { AppRoute, formatPercentage } from "@/libs";
-import { useAuthenticatedCallback, useRouter, useTranslation } from "@liberfi/ui-base";
 import { Link } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
+import { useAuthenticatedCallback, useRouter, useTranslation } from "@liberfi/ui-base";
 import { Number } from "../Number";
 import { HeaderBalanceChart } from "../account/charts";
 import { AddCashAction, ConvertAction, ReceiveAction, SendAction } from "./actions";
@@ -23,7 +24,7 @@ export function AccountOverviewFallback() {
             className="flex items-center text-xs font-medium text-neutral cursor-pointer"
             onPress={handleAccountLink}
           >
-            {t("extend.account.universal_account")}
+            {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
             <ArrowRightIcon width={14} height={14} />
           </Link>
 

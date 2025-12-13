@@ -337,7 +337,7 @@ export default {
       }
     },
     "account": {
-      "universal_account": "Liberfi Account",
+      "universal_account": "{{brand}} Account",
       "address": "Address",
       "add_cash": "Buy",
       "receive": "Receive",

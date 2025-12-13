@@ -1,19 +1,20 @@
-import { AccountActions } from "./AccountActions";
-import { AccountCharts } from "./AccountCharts";
 import { ArrowDownIcon, ArrowUpIcon, BearishIcon, BullishIcon, RefreshIcon } from "@/assets/icons";
-import { Button, Image } from "@heroui/react";
-import clsx from "clsx";
-import { HeaderBalanceChart } from "./charts";
 import { formatPercentage } from "@/libs";
-import { useCallback, useMemo, useState } from "react";
+import { Button, Image } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
 import {
   useTranslation,
   walletBalancesAtom,
   walletBalancesQueryStateAtom,
 } from "@liberfi/ui-base";
-import { AccountOverviewSkeleton } from "./AccountOverviewSkeleton";
-import { Number } from "../Number";
+import clsx from "clsx";
 import { useAtomValue } from "jotai";
+import { useCallback, useMemo, useState } from "react";
+import { Number } from "../Number";
+import { AccountActions } from "./AccountActions";
+import { AccountCharts } from "./AccountCharts";
+import { AccountOverviewSkeleton } from "./AccountOverviewSkeleton";
+import { HeaderBalanceChart } from "./charts";
 
 export function AccountOverview() {
   const { t } = useTranslation();
@@ -67,7 +68,7 @@ export function AccountOverview() {
           <section className="flex-none flex flex-col justify-center">
             {/* desktop title */}
             <div className="max-lg:hidden mb-1 text-xs font-medium text-neutral">
-              {t("extend.account.universal_account")}
+              {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
             </div>
 
             {/* balances */}

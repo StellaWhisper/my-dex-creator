@@ -1,7 +1,8 @@
 import { ArrowRightIcon } from "@/assets/icons";
 import { AppRoute } from "@/libs";
-import { useAuthenticatedCallback, useRouter, useTranslation } from "@liberfi/ui-base";
 import { Link, Skeleton } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
+import { useAuthenticatedCallback, useRouter, useTranslation } from "@liberfi/ui-base";
 import { AddCashAction, ConvertAction, ReceiveAction, SendAction } from "./actions";
 
 export function AccountOverviewSkeleton() {
@@ -21,7 +22,7 @@ export function AccountOverviewSkeleton() {
             className="flex items-center text-xs font-medium text-neutral cursor-pointer"
             onPress={handleAccountLink}
           >
-            {t("extend.account.universal_account")}
+            {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
             <ArrowRightIcon width={14} height={14} />
           </Link>
 

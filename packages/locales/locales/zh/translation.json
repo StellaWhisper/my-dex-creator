@@ -337,7 +337,7 @@
       }
     },
     "account": {
-      "universal_account": "Liberfi 帳戶",
+      "universal_account": "{{brand}} 帳戶",
       "address": "錢包地址",
       "add_cash": "購買",
       "receive": "接收",

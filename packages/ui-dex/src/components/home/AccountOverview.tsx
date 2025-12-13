@@ -1,5 +1,7 @@
-import { Link } from "@heroui/react";
 import { ArrowRightIcon, BearishIcon, BullishIcon } from "@/assets/icons";
+import { AppRoute, formatPercentage } from "@/libs";
+import { Link } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
 import {
   useAuth,
   useAuthenticatedCallback,
@@ -7,14 +9,14 @@ import {
   useTranslation,
   walletBalancesAtom,
 } from "@liberfi/ui-base";
-import { AppRoute, formatPercentage } from "@/libs";
+import { useAtomValue } from "jotai";
 import { useMemo } from "react";
 import { HeaderBalanceChart } from "../account/charts";
 import { Number } from "../Number";
-import { AddCashAction, ConvertAction, ReceiveAction, SendAction } from "./actions";
 import { AccountOverviewFallback } from "./AccountOverviewFallback";
 import { AccountOverviewSkeleton } from "./AccountOverviewSkeleton";
-import { useAtomValue } from "jotai";
+import { AddCashAction, ConvertAction, ReceiveAction, SendAction } from "./actions";
+
 
 export function AccountOverview() {
   const { status } = useAuth();
@@ -59,7 +61,7 @@ function AccountOverviewContent() {
             className="flex items-center text-xs font-medium text-neutral cursor-pointer"
             onPress={handleAccountLink}
           >
-            {t("extend.account.universal_account")}
+            {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
             <ArrowRightIcon width={14} height={14} />
           </Link>
 
