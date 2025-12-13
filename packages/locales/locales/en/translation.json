@@ -1,11 +1,11 @@
 {
   "extend": {
-    "application_name": "Liberfi",
-    "title": "Liberfi丨Trade any token, on any chain",
+    "application_name": "{{brand}}",
+    "title": "{{brand}}丨Trade any token, on any chain",
     "description": "Trade any token on any chain at the first chain-agnostic trading platform. No need to consider chains. 100% decentralized and self-custodial.",
     "languages": {
       "en": "English",
-      "zh": "简体中文"
+      "zh": "繁體中文"
     },
     "header": {
       "home": "Home",
@@ -46,7 +46,7 @@
       "launch_token": "Launch Token"
     },
     "settings": {
-      "account_name": "Liberfi Account",
+      "account_name": "{{brand}} Account",
       "deposit": "Deposit",
       "preferences": "Preferences",
       "social_medias": "Social Medias",
@@ -506,8 +506,8 @@
         "copy_claim_code": "Copy Claim Code",
         "copy_claim_url": "Copy Claim URL",
         "share_to": "Share To",
-        "share_telegram_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! 🔥 #Liberfi",
-        "share_twitter_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! {{url}} 🔥 #Liberfi"
+        "share_telegram_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! 🔥 #{{brand}}",
+        "share_twitter_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! {{url}} 🔥 #{{brand}}"
       },
       "claim": {
         "message": "You've received a Red Packet!",

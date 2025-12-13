@@ -1,13 +1,14 @@
 import { useSwapContext } from "@/components/swap/SwapContext";
-import { useAppSdk, useAuth, useTranslation, walletBalancesAtom } from "@liberfi/ui-base";
+import { getBuyTokenUrl } from "@/libs";
 import { Button, Input } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
+import { useAppSdk, useAuth, useTranslation, walletBalancesAtom } from "@liberfi/ui-base";
 import BigNumber from "bignumber.js";
 import clsx from "clsx";
+import { useAtomValue } from "jotai";
 import { debounce } from "lodash-es";
 import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { TradeInputSkeletons } from "./TradeInputSkeletons";
-import { getBuyTokenUrl } from "@/libs";
-import { useAtomValue } from "jotai";
 
 export type TradeInputProps = {
   type: "buy" | "sell";
@@ -253,7 +254,7 @@ function EmptyWalletError() {
       <span className="text-bullish cursor-pointer" onClick={onReceive}>
         {t("extend.account.receive")}
       </span>{" "}
-      {t("extend.account.assets.empty_tip", { title: t("extend.application_name") })}
+      {t("extend.account.assets.empty_tip", { title: t("extend.application_name", { brand: BRAND_CONFIG.name }) })}
     </div>
   );
 }

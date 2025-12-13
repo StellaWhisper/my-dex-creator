@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { BRAND_CONFIG } from "@liberfi/core";
 import { of } from "rxjs";
-import { TvChartLibraryWidgetBridge } from "./TvChartLibraryWidgetBridge";
-import { TvChartManager } from "./TvChartManager";
-import { TvChartSettings } from "./TvChartSettings";
-import { ALL_TV_CHART_RESOLUTIONS } from "./constants";
 import {
   GetMarksCallback,
   HistoryCallback,
@@ -15,6 +12,10 @@ import {
   SubscribeBarsCallback,
   SymbolResolveExtension,
 } from "../../../../../apps/web/public/static/charting_library";
+import { TvChartLibraryWidgetBridge } from "./TvChartLibraryWidgetBridge";
+import { TvChartManager } from "./TvChartManager";
+import { TvChartSettings } from "./TvChartSettings";
+import { ALL_TV_CHART_RESOLUTIONS } from "./constants";
 import { getTvChartLibraryResolution } from "./utils";
 
 export class TvChartDataFeed {
@@ -48,9 +49,9 @@ export class TvChartDataFeed {
         supports_marks: true,
         exchanges: [
           {
-            value: "Liberfi",
-            name: "Liberfi",
-            desc: "Liberfi",
+            value: BRAND_CONFIG.name,
+            name: BRAND_CONFIG.name,
+            desc: BRAND_CONFIG.name,
           },
         ],
       });

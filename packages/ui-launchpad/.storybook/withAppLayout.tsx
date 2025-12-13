@@ -1,17 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars, unused-imports/no-unused-imports */
-import React, { PropsWithChildren, useMemo } from "react";
-import { StoryFn } from "@storybook/react";
-import { PinataSDK } from "pinata";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { GraphQLClient } from "graphql-request";
-import Cookies from "js-cookie";
-import { PrivyProvider } from "@privy-io/react-auth";
-import { toSolanaWalletConnectors } from "@privy-io/react-auth/solana";
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 import { DexClient } from "@chainstream-io/sdk";
-import { IRouter, ITranslation, MockAppSdk } from "@liberfi/core";
+import { BRAND_CONFIG, IRouter, ITranslation, MockAppSdk } from "@liberfi/core";
+import en from "@liberfi/locales/dist/locales/en/translation.json";
+import zh_CN from "@liberfi/locales/dist/locales/zh-CN/translation.json";
 import { GraphQLClientProvider } from "@liberfi/react-backend";
 import { DexClientProvider } from "@liberfi/react-dex";
 import {
@@ -22,9 +14,17 @@ import {
   UIKitProvider,
   useDexTokenProvider,
 } from "@liberfi/ui-base";
-import en from "@liberfi/locales/dist/locales/en/translation.json";
-import zh_CN from "@liberfi/locales/dist/locales/zh-CN/translation.json";
-import { Header, BottomNavigationBar, DexDataProvider } from "@liberfi/ui-dex";
+import { BottomNavigationBar, DexDataProvider, Header } from "@liberfi/ui-dex";
+import { PrivyProvider } from "@privy-io/react-auth";
+import { toSolanaWalletConnectors } from "@privy-io/react-auth/solana";
+import { StoryFn } from "@storybook/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { GraphQLClient } from "graphql-request";
+import i18n from "i18next";
+import Cookies from "js-cookie";
+import { PinataSDK } from "pinata";
+import React, { PropsWithChildren, useMemo } from "react";
+import { initReactI18next } from "react-i18next";
 import { LaunchPadModal } from "../src";
 
 const queryClient = new QueryClient({
@@ -137,8 +137,8 @@ export function withAppLayout(Story: StoryFn) {
                 appearance: {
                   theme: "dark",
                   accentColor: "#BCFF2E",
-                  logo: "https://liberfi.io/brand.png",
-                  landingHeader: "Sign in or sign up to Liberfi",
+                  logo: BRAND_CONFIG.logo,
+                  landingHeader: "Sign in or sign up to ${BRAND_CONFIG.name}",
                   walletList: [
                     "phantom",
                     "okx_wallet",

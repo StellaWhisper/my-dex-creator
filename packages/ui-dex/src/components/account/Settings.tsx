@@ -1,6 +1,5 @@
-import { ReactNode, useCallback } from "react";
-import { clsx } from "clsx";
-import { Avatar, Button } from "@heroui/react";
+import { Avatar, Button, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
+import { BRAND_CONFIG } from "@liberfi/core";
 import {
   DiscordIcon,
   FAQIcon,
@@ -18,6 +17,9 @@ import {
   UserGuideIcon,
   useTranslation,
 } from "@liberfi/ui-base";
+import { clsx } from "clsx";
+import { ReactNode, useCallback } from "react";
+import { LanguageSettings } from "../account/settings/LanguageSettings";
 
 export type SettingsProps = {
   onSetting?: (key: string) => void;
@@ -25,9 +27,7 @@ export type SettingsProps = {
 
 export function Settings({ onSetting }: SettingsProps) {
   const { t } = useTranslation();
-
   const appSdk = useAppSdk();
-
   const { signIn, signOut, status } = useAuth();
 
   const handleDeposit = useAuthenticatedCallback(() => {
@@ -35,48 +35,43 @@ export function Settings({ onSetting }: SettingsProps) {
     onSetting?.("deposit");
   }, [appSdk, onSetting]);
 
-  const handleSwitchLanguage = useCallback(() => {
-    appSdk.events.emit("language:open");
-    onSetting?.("language");
-  }, [appSdk, onSetting]);
-
   const handleOpenTwitter = useCallback(() => {
-    // appSdk.openPage("https://x.com/liberfi");
+    //appSdk.openPage(BRAND_CONFIG.social.twitter);
     onSetting?.("twitter");
   }, [onSetting]);
 
   const handleOpenTelegram = useCallback(() => {
-    // appSdk.openPage("https://t.me/liberfi");
+    //appSdk.openPage(BRAND_CONFIG.social.telegram);
     onSetting?.("telegram");
   }, [onSetting]);
 
   const handleOpenDiscord = useCallback(() => {
-    // appSdk.openPage("https://discord.com/liberfi");
+     //appSdk.openPage(BRAND_CONFIG.social.discord);
     onSetting?.("discord");
   }, [onSetting]);
 
   const handleOpenPrivacyPolicy = useCallback(() => {
-    // appSdk.openPage("https://liberfi.io/privacy-policy");
+    // appSdk.openPage(BRAND_CONFIG.social.privacy-policy);
     onSetting?.("privacy_policy");
   }, [onSetting]);
 
   const handleOpenTermsOfService = useCallback(() => {
-    // appSdk.openPage("https://liberfi.io/terms-of-service");
+    // appSdk.openPage(BRAND_CONFIG.social.terms-of-service);
     onSetting?.("terms_of_service");
   }, [onSetting]);
 
   const handleOpenSupport = useCallback(() => {
-    // appSdk.openPage("https://liberfi.io/support");
+    // appSdk.openPage(BRAND_CONFIG.social.support);
     onSetting?.("support");
   }, [onSetting]);
 
   const handleOpenFAQ = useCallback(() => {
-    // appSdk.openPage("https://liberfi.io/faq");
+    // appSdk.openPage(BRAND_CONFIG.social.faq);
     onSetting?.("faq");
   }, [onSetting]);
 
   const handleOpenUserGuide = useCallback(() => {
-    // appSdk.openPage("https://liberfi.io/docs");
+    // appSdk.openPage(BRAND_CONFIG.social.docs);
     onSetting?.("user_guide");
   }, [onSetting]);
 
@@ -97,7 +92,7 @@ export function Settings({ onSetting }: SettingsProps) {
         {/* avatar & name */}
         <div className="flex items-center gap-6">
           <Avatar size="sm" src="/avatar.jpg" />
-          <p className="text-base font-medium">{t("extend.settings.account_name")}</p>
+          <p className="text-base font-medium"> {t("extend.settings.account_name", { brand: BRAND_CONFIG.name })} </p>
         </div>
         {/* deposit */}
         <Button
@@ -116,11 +111,25 @@ export function Settings({ onSetting }: SettingsProps) {
         <div className="space-y-6">
           <h2 className="text-sm font-medium text-neutral">{t("extend.settings.preferences")}</h2>
           <div className="grid grid-cols-4 gap-6 max-sm:grid-cols-3 max-sm:gap-4 content-center">
-            <SettingsItem
-              title={t("extend.settings.language")}
-              icon={<TranslateIcon width={20} height={20} />}
-              onPress={handleSwitchLanguage}
-            />
+            <Popover placement="bottom-start">
+              <PopoverTrigger>
+                <Button
+                  size="sm"
+                  className="flex items-center gap-1 text-sm font-medium bg-transparent text-primary"
+                  disableRipple
+                >
+                  <TranslateIcon width={20} height={20} />
+                  {t("extend.settings.language")}
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="p-2 w-48">
+                <LanguageSettings
+                  onLanguageChange={(_lang) => {
+                    onSetting?.("language");
+                  }}
+                />
+              </PopoverContent>
+            </Popover>
           </div>
         </div>
 

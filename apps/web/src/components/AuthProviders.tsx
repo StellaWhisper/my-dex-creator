@@ -1,9 +1,11 @@
 "use client";
 
-import { PropsWithChildren } from "react";
+import { BRAND_CONFIG } from "@liberfi/core";
+import { PrivyAuthProvider, PrivyWalletProvider } from "@liberfi/ui-base";
 import { PrivyProvider } from "@privy-io/react-auth";
 import { toSolanaWalletConnectors } from "@privy-io/react-auth/solana";
-import { PrivyAuthProvider, PrivyWalletProvider } from "@liberfi/ui-base";
+import { PropsWithChildren } from "react";
+
 
 export function AuthProviders({ children }: PropsWithChildren) {
   return (
@@ -14,8 +16,8 @@ export function AuthProviders({ children }: PropsWithChildren) {
         appearance: {
           theme: "dark",
           accentColor: "#BCFF2E",
-          logo: "https://liberfi-web.vercel.app/brand.png",
-          landingHeader: "Sign in or sign up to Liberfi",
+          logo: BRAND_CONFIG.logo, //"https://liberfi-web.vercel.app/brand.png",
+          landingHeader: `Sign in or sign up to ${BRAND_CONFIG.name}`,
           walletList: ["phantom", "okx_wallet", "solflare", "backpack", "detected_solana_wallets"],
           walletChainType: "solana-only",
         },

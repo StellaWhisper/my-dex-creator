@@ -1,11 +1,11 @@
 export default {
   "extend": {
-    "application_name": "Liberfi",
-    "title": "Liberfi丨在任何鏈上交易任何代幣",
+    "application_name": "{{brand}}",
+    "title": "{{slogan}}",
     "description": "在首個與鏈無關的交易平台上，於任何鏈上交易任何代幣。無需考慮鏈的選擇。100%去中心化且自托管。",
     "languages": {
       "en": "English",
-      "zh": "簡體中文"
+      "zh": "繁體中文"
     },
     "header": {
       "home": "首頁",
@@ -337,7 +337,7 @@ export default {
       }
     },
     "account": {
-      "universal_account": "Liberfi 帳戶",
+      "universal_account": "{{brand}} 帳戶",
       "address": "錢包地址",
       "add_cash": "購買",
       "receive": "接收",
@@ -506,8 +506,8 @@ export default {
         "copy_claim_code": "複製領取碼",
         "copy_claim_url": "複製領取連結",
         "share_to": "分享到",
-        "share_telegram_text": "你已收到一個紅包 🎁，加入即可領取你的加密禮物！🔥 #Liberfi",
-        "share_twitter_text": "你已收到一個紅包 🎁，點擊連結加入即可領取你的加密禮物！{{url}} 🔥 #Liberfi"
+        "share_telegram_text": "你已收到一個紅包 🎁，加入即可領取你的加密禮物！🔥 #{{brand}}",
+        "share_twitter_text": "你已收到一個紅包 🎁，點擊連結加入即可領取你的加密禮物！{{url}} 🔥 #{{brand}}"
       },
       "claim": {
         "message": "你收到了一个红包！",
