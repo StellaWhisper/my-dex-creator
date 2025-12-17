@@ -1,16 +1,16 @@
 export const CONFIG = {
   branding: {
-    name: "Liberfi",
-    logo: "/brand.png",
-    privacyPolicy: "https://liberfi.io/privacy-policy",
-    termsOfService: "https://liberfi.io/terms-of-service",
+    name: "my dex creator",
+    logo: "",
+    privacyPolicy: "",
+    termsOfService: ""
   },
   socials: {
-    twitter: "https://x.com/liberfi",
-    telegram: "https://t.me/liberfi",
-    discord: "https://discord.com/liberfi",
+    twitter: "x.com/test123",
+    telegram: "tg.com/test345",
+    discord: "discord.com/test345"
   },
   storage: {
-    prefix: "liberfi",
-  },
-};
+    prefix: ""
+  }
+}
