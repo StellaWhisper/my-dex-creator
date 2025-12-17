@@ -1,6 +1,6 @@
 import { WalletBalanceDetailDTO } from "@chainstream-io/sdk/openapi";
 import { Listbox, ListboxItem, Skeleton } from "@heroui/react";
-import { BRAND_CONFIG, CHAIN_ID } from "@liberfi/core";
+import { CONFIG, CHAIN_ID } from "@liberfi/core";
 import { useTranslation, walletBalancesAtom } from "@liberfi/ui-base";
 import BigNumber from "bignumber.js";
 import clsx from "clsx";
@@ -9,7 +9,6 @@ import { useMemo } from "react";
 import { EmptyData } from "../EmptyData";
 import { Number } from "../Number";
 import { TokenAvatar } from "../TokenAvatar";
-
 
 type AssetSelectProps = {
   chainId?: CHAIN_ID;
@@ -135,7 +134,9 @@ function Empty({ onBuy, onReceive }: Pick<AssetSelectProps, "onBuy" | "onReceive
         <span className="text-primary cursor-pointer" onClick={onReceive}>
           {t("extend.account.receive")}
         </span>{" "}
-        {t("extend.account.assets.empty_tip", { title: t("extend.application_name", { brand: BRAND_CONFIG.name })  })}
+        {t("extend.account.assets.empty_tip", {
+          title: CONFIG.branding.name,
+        })}
       </p>
     </div>
   );

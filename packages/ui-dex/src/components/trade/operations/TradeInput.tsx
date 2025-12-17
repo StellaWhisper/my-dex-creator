@@ -1,7 +1,7 @@
 import { useSwapContext } from "@/components/swap/SwapContext";
 import { getBuyTokenUrl } from "@/libs";
 import { Button, Input } from "@heroui/react";
-import { BRAND_CONFIG } from "@liberfi/core";
+import { CONFIG } from "@liberfi/core";
 import { useAppSdk, useAuth, useTranslation, walletBalancesAtom } from "@liberfi/ui-base";
 import BigNumber from "bignumber.js";
 import clsx from "clsx";
@@ -254,7 +254,7 @@ function EmptyWalletError() {
       <span className="text-bullish cursor-pointer" onClick={onReceive}>
         {t("extend.account.receive")}
       </span>{" "}
-      {t("extend.account.assets.empty_tip", { title: t("extend.application_name", { brand: BRAND_CONFIG.name }) })}
+      {t("extend.account.assets.empty_tip", { title: CONFIG.branding.name })}
     </div>
   );
 }

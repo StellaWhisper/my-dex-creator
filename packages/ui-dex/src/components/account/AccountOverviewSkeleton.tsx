@@ -1,6 +1,6 @@
 import { ArrowDownIcon } from "@/assets/icons";
 import { Button, Skeleton } from "@heroui/react";
-import { BRAND_CONFIG } from "@liberfi/core";
+import { CONFIG } from "@liberfi/core";
 import { useTranslation } from "@liberfi/ui-base";
 import { AccountActions } from "./AccountActions";
 import { AccountCharts } from "./AccountCharts";
@@ -21,7 +21,7 @@ export function AccountOverviewSkeleton() {
           <section className="flex-none flex flex-col justify-center">
             {/* desktop title */}
             <div className="max-lg:hidden mb-1 text-xs font-medium text-neutral">
-              {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
+              {t("extend.account.universal_account", { application_name: CONFIG.branding.name })}
             </div>
 
             {/* balances */}

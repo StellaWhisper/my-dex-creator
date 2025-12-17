@@ -1,12 +1,8 @@
 import { ArrowDownIcon, ArrowUpIcon, BearishIcon, BullishIcon, RefreshIcon } from "@/assets/icons";
 import { formatPercentage } from "@/libs";
 import { Button, Image } from "@heroui/react";
-import { BRAND_CONFIG } from "@liberfi/core";
-import {
-  useTranslation,
-  walletBalancesAtom,
-  walletBalancesQueryStateAtom,
-} from "@liberfi/ui-base";
+import { CONFIG } from "@liberfi/core";
+import { useTranslation, walletBalancesAtom, walletBalancesQueryStateAtom } from "@liberfi/ui-base";
 import clsx from "clsx";
 import { useAtomValue } from "jotai";
 import { useCallback, useMemo, useState } from "react";
@@ -68,7 +64,7 @@ export function AccountOverview() {
           <section className="flex-none flex flex-col justify-center">
             {/* desktop title */}
             <div className="max-lg:hidden mb-1 text-xs font-medium text-neutral">
-              {t("extend.account.universal_account", { brand: BRAND_CONFIG.name })}
+              {t("extend.account.universal_account", { application_name: CONFIG.branding.name })}
             </div>
 
             {/* balances */}

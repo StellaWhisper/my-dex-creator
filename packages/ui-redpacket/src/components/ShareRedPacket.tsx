@@ -3,7 +3,7 @@
 import { RedPacketIcon } from "@/icons";
 import { RedPacketDTO } from "@chainstream-io/sdk/openapi";
 import { Button, Link, Skeleton } from "@heroui/react";
-import { BRAND_CONFIG, chainTxExplorer, ROUTES } from "@liberfi/core";
+import { CONFIG, chainTxExplorer, ROUTES } from "@liberfi/core";
 import { useTokenQuery } from "@liberfi/react-dex";
 import { useRedPacketQuery } from "@liberfi/react-redpacket";
 import {
@@ -71,7 +71,7 @@ export function ShareRedPacket({
   const handleShareToTelegram = useCallback(() => {
     appSdk.openPage(
       `https://t.me/share?url=${encodeURIComponent(shareURL)}&text=${encodeURIComponent(
-        t("extend.redpacket.share.share_telegram_text", {brand: BRAND_CONFIG.name} ),
+        t("extend.redpacket.share.share_telegram_text", { hashtag: CONFIG.branding.name }),
       )}`,
       {
         target: "_blank",
@@ -82,7 +82,10 @@ export function ShareRedPacket({
   const handleShareToTwitter = useCallback(() => {
     appSdk.openPage(
       `https://x.com/intent/post?text=${encodeURIComponent(
-        t("extend.redpacket.share.share_twitter_text", { url: shareURL, brand: BRAND_CONFIG.name }),
+        t("extend.redpacket.share.share_twitter_text", {
+          url: shareURL,
+          hashtag: CONFIG.branding.name,
+        }),
       )}`,
       {
         target: "_blank",

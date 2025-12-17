@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { BRAND_CONFIG } from "@liberfi/core";
+import { CONFIG } from "@liberfi/core";
 import { of } from "rxjs";
 import {
   GetMarksCallback,
@@ -49,9 +49,9 @@ export class TvChartDataFeed {
         supports_marks: true,
         exchanges: [
           {
-            value: BRAND_CONFIG.name,
-            name: BRAND_CONFIG.name,
-            desc: BRAND_CONFIG.name,
+            value: CONFIG.branding.name,
+            name: CONFIG.branding.name,
+            desc: CONFIG.branding.name,
           },
         ],
       });

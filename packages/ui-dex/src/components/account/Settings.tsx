@@ -1,5 +1,5 @@
 import { Avatar, Button, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
-import { BRAND_CONFIG } from "@liberfi/core";
+import { CONFIG } from "@liberfi/core";
 import {
   DiscordIcon,
   FAQIcon,
@@ -36,42 +36,37 @@ export function Settings({ onSetting }: SettingsProps) {
   }, [appSdk, onSetting]);
 
   const handleOpenTwitter = useCallback(() => {
-    //appSdk.openPage(BRAND_CONFIG.social.twitter);
+    //appSdk.openPage(CONFIG.socials.twitter);
     onSetting?.("twitter");
   }, [onSetting]);
 
   const handleOpenTelegram = useCallback(() => {
-    //appSdk.openPage(BRAND_CONFIG.social.telegram);
+    //appSdk.openPage(CONFIG.socials.telegram);
     onSetting?.("telegram");
   }, [onSetting]);
 
   const handleOpenDiscord = useCallback(() => {
-     //appSdk.openPage(BRAND_CONFIG.social.discord);
+    //appSdk.openPage(CONFIG.socials.discord);
     onSetting?.("discord");
   }, [onSetting]);
 
   const handleOpenPrivacyPolicy = useCallback(() => {
-    // appSdk.openPage(BRAND_CONFIG.social.privacy-policy);
     onSetting?.("privacy_policy");
   }, [onSetting]);
 
   const handleOpenTermsOfService = useCallback(() => {
-    // appSdk.openPage(BRAND_CONFIG.social.terms-of-service);
     onSetting?.("terms_of_service");
   }, [onSetting]);
 
   const handleOpenSupport = useCallback(() => {
-    // appSdk.openPage(BRAND_CONFIG.social.support);
     onSetting?.("support");
   }, [onSetting]);
 
   const handleOpenFAQ = useCallback(() => {
-    // appSdk.openPage(BRAND_CONFIG.social.faq);
     onSetting?.("faq");
   }, [onSetting]);
 
   const handleOpenUserGuide = useCallback(() => {
-    // appSdk.openPage(BRAND_CONFIG.social.docs);
     onSetting?.("user_guide");
   }, [onSetting]);
 
@@ -92,7 +87,9 @@ export function Settings({ onSetting }: SettingsProps) {
         {/* avatar & name */}
         <div className="flex items-center gap-6">
           <Avatar size="sm" src="/avatar.jpg" />
-          <p className="text-base font-medium"> {t("extend.settings.account_name", { brand: BRAND_CONFIG.name })} </p>
+          <p className="text-base font-medium">
+            {t("extend.settings.account_name", { application_name: CONFIG.branding.name })}
+          </p>
         </div>
         {/* deposit */}
         <Button

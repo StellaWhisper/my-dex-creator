@@ -8,7 +8,7 @@ import { tokenInfoAtom } from "@/states";
 import { DexClient } from "@chainstream-io/sdk";
 import { Candle, Resolution, Token } from "@chainstream-io/sdk/openapi";
 import { StreamApi } from "@chainstream-io/sdk/stream";
-import { BRAND_CONFIG } from "@liberfi/core";
+import { CONFIG } from "@liberfi/core";
 import { useDexClient } from "@liberfi/react-dex";
 import { useRouter, useTranslation } from "@liberfi/ui-base";
 import { useAtomValue } from "jotai";
@@ -188,9 +188,9 @@ const configurationData: DatafeedConfiguration = {
   supports_marks: true,
   exchanges: [
     {
-      value: BRAND_CONFIG.name, // `exchange` argument for the `searchSymbols` method, if a user selects this exchange
-      name: BRAND_CONFIG.name, // filter name
-      desc: `${BRAND_CONFIG.name} exchange`, // full exchange name displayed in the filter popup
+      value: CONFIG.branding.name, // `exchange` argument for the `searchSymbols` method, if a user selects this exchange
+      name: CONFIG.branding.name, // filter name
+      desc: `${CONFIG.branding.name} exchange`, // full exchange name displayed in the filter popup
     },
   ],
   symbols_types: [
@@ -239,7 +239,7 @@ const getDatafeed = ({
 
       type: "crypto",
       session: "24x7",
-      exchange: BRAND_CONFIG.name,
+      exchange: CONFIG.branding.name,
       listed_exchange: "",
       format: "price",
       // price_type

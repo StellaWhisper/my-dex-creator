@@ -19,7 +19,7 @@ import {
 import { quotePricesSubject, updateTokenLatestPrice } from "@/states";
 import { Candle, Resolution, Token } from "@chainstream-io/sdk/openapi";
 import { Unsubscrible } from "@chainstream-io/sdk/stream";
-import { BRAND_CONFIG, parseChainId } from "@liberfi/core";
+import { CONFIG, parseChainId } from "@liberfi/core";
 import { chainParam, fetchToken, fetchTokenCandles, QueryKeys } from "@liberfi/react-dex";
 import { dexClientSubject, queryClientSubject } from "@liberfi/ui-base";
 import BigNumber from "bignumber.js";
@@ -469,7 +469,7 @@ function tokenSymbolInfo(
     ticker: tickerSymbol,
     type: "crypto",
     session: "24x7",
-    exchange: BRAND_CONFIG.name,
+    exchange: CONFIG.branding.name,
     priceType: priceType,
     listed_exchange: "",
     format: "price",

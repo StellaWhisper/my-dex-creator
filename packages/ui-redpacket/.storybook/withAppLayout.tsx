@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars, unused-imports/no-unused-imports */
 import { DexClient } from "@chainstream-io/sdk";
-import { BRAND_CONFIG, IRouter, ITranslation, MockAppSdk } from "@liberfi/core";
+import { CONFIG, IRouter, ITranslation, MockAppSdk } from "@liberfi/core";
 import en from "@liberfi/locales/dist/locales/en/translation.json";
 import zh_CN from "@liberfi/locales/dist/locales/zh-CN/translation.json";
 import { GraphQLClientProvider } from "@liberfi/react-backend";
@@ -143,8 +143,8 @@ export function withAppLayout(Story: StoryFn) {
                 appearance: {
                   theme: "dark",
                   accentColor: "#BCFF2E",
-                  logo:  BRAND_CONFIG.logo,
-                  landingHeader: "Sign in or sign up to ${BRAND_CONFIG.name}",
+                  logo: CONFIG.branding.logo,
+                  landingHeader: `Sign in or sign up to ${CONFIG.branding.name}`,
                   walletList: [
                     "phantom",
                     "okx_wallet",

@@ -1,7 +1,6 @@
 export default {
   "extend": {
-    "application_name": "{{brand}}",
-    "title": "{{brand}}丨Trade any token, on any chain",
+    "title": "{{name}}丨Trade any token, on any chain",
     "description": "Trade any token on any chain at the first chain-agnostic trading platform. No need to consider chains. 100% decentralized and self-custodial.",
     "languages": {
       "en": "English",
@@ -46,7 +45,7 @@ export default {
       "launch_token": "Launch Token"
     },
     "settings": {
-      "account_name": "{{brand}} Account",
+      "account_name": "{{application_name}} Account",
       "deposit": "Deposit",
       "preferences": "Preferences",
       "social_medias": "Social Medias",
@@ -337,7 +336,7 @@ export default {
       }
     },
     "account": {
-      "universal_account": "{{brand}} Account",
+      "universal_account": "{{application_name}} Account",
       "address": "Address",
       "add_cash": "Buy",
       "receive": "Receive",
@@ -506,8 +505,8 @@ export default {
         "copy_claim_code": "Copy Claim Code",
         "copy_claim_url": "Copy Claim URL",
         "share_to": "Share To",
-        "share_telegram_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! 🔥 #{{brand}}",
-        "share_twitter_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! {{url}} 🔥 #{{brand}}"
+        "share_telegram_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! 🔥 #{{hashtag}}",
+        "share_twitter_text": "You've received a Red Packet! 🎁 Join to claim your crypto gift! {{url}} 🔥 #{{hashtag}}"
       },
       "claim": {
         "message": "You've received a Red Packet!",

@@ -1,7 +1,7 @@
-import { BRAND_CONFIG, IStorage } from "@liberfi/core";
+import { CONFIG, IStorage } from "@liberfi/core";
 
 export class BrowserStorage implements IStorage {
-  prefix = BRAND_CONFIG.storagePrefix;
+  prefix = CONFIG.storage.prefix;
 
   get = async <R>(key: string) => {
     const value = localStorage.getItem(`${this.prefix}_${key}`);
