@@ -1,7 +1,7 @@
 export const CONFIG = {
   branding: {
     name: "my dex creator",
-    logo: "brand.png",
+    logo: "",
     privacyPolicy: "",
     termsOfService: ""
   },
